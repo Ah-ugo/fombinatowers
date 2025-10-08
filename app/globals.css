@@ -1,0 +1,238 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Enhanced luxury color palette with richer gold and better contrast */
+  --background: oklch(0.99 0.002 85);
+  --foreground: oklch(0.12 0.015 85);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0.015 85);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0.015 85);
+  /* Rich warm gold for luxury feel */
+  --primary: oklch(0.52 0.14 55);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.97 0.005 85);
+  --secondary-foreground: oklch(0.12 0.015 85);
+  --muted: oklch(0.965 0.005 85);
+  --muted-foreground: oklch(0.48 0.012 85);
+  --accent: oklch(0.97 0.005 85);
+  --accent-foreground: oklch(0.12 0.015 85);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.005 85);
+  --input: oklch(0.92 0.005 85);
+  --ring: oklch(0.52 0.14 55);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.99 0.002 85);
+  --sidebar-foreground: oklch(0.12 0.015 85);
+  --sidebar-primary: oklch(0.52 0.14 55);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.97 0.005 85);
+  --sidebar-accent-foreground: oklch(0.12 0.015 85);
+  --sidebar-border: oklch(0.92 0.005 85);
+  --sidebar-ring: oklch(0.52 0.14 55);
+}
+
+.dark {
+  /* Enhanced dark mode with proper luxury contrast */
+  --background: oklch(0.12 0.015 85);
+  --foreground: oklch(0.99 0.002 85);
+  --card: oklch(0.16 0.015 85);
+  --card-foreground: oklch(0.99 0.002 85);
+  --popover: oklch(0.16 0.015 85);
+  --popover-foreground: oklch(0.99 0.002 85);
+  --primary: oklch(0.62 0.16 55);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.22 0.015 85);
+  --secondary-foreground: oklch(0.99 0.002 85);
+  --muted: oklch(0.22 0.015 85);
+  --muted-foreground: oklch(0.68 0.012 85);
+  --accent: oklch(0.22 0.015 85);
+  --accent-foreground: oklch(0.99 0.002 85);
+  --destructive: oklch(0.5 0.2 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.22 0.015 85);
+  --input: oklch(0.22 0.015 85);
+  --ring: oklch(0.62 0.16 55);
+  --sidebar: oklch(0.16 0.015 85);
+  --sidebar-foreground: oklch(0.99 0.002 85);
+  --sidebar-primary: oklch(0.62 0.16 55);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.22 0.015 85);
+  --sidebar-accent-foreground: oklch(0.99 0.002 85);
+  --sidebar-border: oklch(0.22 0.015 85);
+  --sidebar-ring: oklch(0.62 0.16 55);
+}
+
+@theme inline {
+  /* Updated font variables to use new luxury fonts */
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-cormorant);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    /* Added letter spacing for luxury feel */
+    letter-spacing: 0.01em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+    /* Enhanced heading letter spacing for elegance */
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+}
+
+/* Enhanced smooth scroll with luxury easing */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Refined luxury animations with smoother easing */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Added luxury shimmer effect for premium elements */
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Parallax effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Added luxury glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Premium gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, oklch(0.52 0.14 55) 0%, oklch(0.42 0.12 45) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Luxury hover effects */
+.luxury-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
