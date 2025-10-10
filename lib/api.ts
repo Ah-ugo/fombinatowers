@@ -155,3 +155,16 @@ export async function uploadMedia(file: File, token: string) {
   if (!response.ok) throw new Error('Failed to upload media');
   return response.json();
 }
+
+export async function submitApplication(applicationData: any) {
+  const response = await fetch(`${API_BASE_URL}/api/applications`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(applicationData),
+  });
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.detail || 'Failed to submit application');
+  }
+  return response.json();
+}
