@@ -73,7 +73,7 @@ export default function ApplicationPage() {
     try {
       // Submit form data to API
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/applications`,
+        `https://fombina-backend.onrender.com/api/applications`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
