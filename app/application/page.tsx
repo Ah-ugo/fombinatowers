@@ -121,7 +121,7 @@ export default function ApplicationPage() {
 
   const downloadPDF = () => {
     // Trigger PDF download
-    window.open('/documents/fombina-tower-application-form.pdf', '_blank');
+    window.open('/documents/APPLICATION-FORM.pdf', '_blank');
   };
 
   return (
