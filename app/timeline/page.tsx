@@ -1,6 +1,6 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
-import { CheckCircle2, Circle, Clock } from "lucide-react"
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { CheckCircle2, Circle, Clock } from "lucide-react";
 
 const timelineEvents = [
   {
@@ -16,42 +16,48 @@ const timelineEvents = [
     title: "Regulatory Approvals",
     date: "Q3 2023",
     status: "completed",
-    description: "All necessary permits, environmental clearances, and government approvals secured.",
+    description:
+      "All necessary permits, environmental clearances, and government approvals secured.",
   },
   {
     id: 3,
     title: "Site Preparation",
     date: "Q4 2023",
     status: "completed",
-    description: "Land clearing, soil testing, and site preparation completed ahead of schedule.",
+    description:
+      "Land clearing, soil testing, and site preparation completed ahead of schedule.",
   },
   {
     id: 4,
     title: "Foundation & Groundbreaking",
     date: "Q1 2024",
     status: "completed",
-    description: "Official groundbreaking ceremony and foundation work commenced with advanced engineering.",
+    description:
+      "Official groundbreaking ceremony and foundation work commenced with advanced engineering.",
   },
   {
     id: 5,
     title: "Structural Framework",
     date: "Q2 2024 - Q4 2024",
     status: "in-progress",
-    description: "Core structure and steel framework construction currently underway with 40% completion.",
+    description:
+      "Core structure and steel framework construction currently underway with 40% completion.",
   },
   {
     id: 6,
     title: "Facade & Exterior",
     date: "Q1 2025 - Q3 2025",
     status: "upcoming",
-    description: "Installation of premium glass facade and exterior finishing with sustainable materials.",
+    description:
+      "Installation of premium glass facade and exterior finishing with sustainable materials.",
   },
   {
     id: 7,
     title: "Interior Build-Out",
     date: "Q4 2025 - Q2 2026",
     status: "upcoming",
-    description: "Interior construction, MEP systems, and luxury finishes installation.",
+    description:
+      "Interior construction, MEP systems, and luxury finishes installation.",
   },
   {
     id: 8,
@@ -65,9 +71,10 @@ const timelineEvents = [
     title: "Grand Opening",
     date: "Q4 2026",
     status: "upcoming",
-    description: "Official grand opening ceremony and commencement of operations.",
+    description:
+      "Official grand opening ceremony and commencement of operations.",
   },
-]
+];
 
 export default function TimelinePage() {
   return (
@@ -78,7 +85,7 @@ export default function TimelinePage() {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/placeholder.svg?height=800&width=1920"
+            src="/real005.jpeg"
             alt="Timeline Hero"
             className="w-full h-full object-cover"
           />
@@ -125,20 +132,43 @@ export default function TimelinePage() {
               {/* Timeline Events */}
               <div className="space-y-12">
                 {timelineEvents.map((event, index) => (
-                  <div key={event.id} className={`relative ${index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2 md:ml-auto"}`}>
-                    <div className={`flex items-start ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}>
+                  <div
+                    key={event.id}
+                    className={`relative ${
+                      index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2 md:ml-auto"
+                    }`}
+                  >
+                    <div
+                      className={`flex items-start ${
+                        index % 2 === 0 ? "" : "md:flex-row-reverse"
+                      }`}
+                    >
                       {/* Icon */}
                       <div className="absolute left-8 -translate-x-1/2 md:left-1/2">
                         <div className="flex items-center justify-center w-16 h-16 rounded-full bg-background border-4 border-border">
-                          {event.status === "completed" && <CheckCircle2 className="text-primary" size={28} />}
-                          {event.status === "in-progress" && <Clock className="text-primary animate-pulse" size={28} />}
-                          {event.status === "upcoming" && <Circle className="text-muted-foreground" size={28} />}
+                          {event.status === "completed" && (
+                            <CheckCircle2 className="text-primary" size={28} />
+                          )}
+                          {event.status === "in-progress" && (
+                            <Clock
+                              className="text-primary animate-pulse"
+                              size={28}
+                            />
+                          )}
+                          {event.status === "upcoming" && (
+                            <Circle
+                              className="text-muted-foreground"
+                              size={28}
+                            />
+                          )}
                         </div>
                       </div>
 
                       {/* Content */}
                       <div
-                        className={`ml-24 md:ml-0 ${index % 2 === 0 ? "md:mr-12" : "md:ml-12"} bg-card p-8 rounded-lg shadow-lg border border-border`}
+                        className={`ml-24 md:ml-0 ${
+                          index % 2 === 0 ? "md:mr-12" : "md:ml-12"
+                        } bg-card p-8 rounded-lg shadow-lg border border-border`}
                       >
                         <div className="flex items-center justify-between mb-4">
                           <span
@@ -146,20 +176,26 @@ export default function TimelinePage() {
                               event.status === "completed"
                                 ? "bg-primary/10 text-primary"
                                 : event.status === "in-progress"
-                                  ? "bg-primary/10 text-primary"
-                                  : "bg-muted text-muted-foreground"
+                                ? "bg-primary/10 text-primary"
+                                : "bg-muted text-muted-foreground"
                             }`}
                           >
                             {event.status === "completed"
                               ? "Completed"
                               : event.status === "in-progress"
-                                ? "In Progress"
-                                : "Upcoming"}
+                              ? "In Progress"
+                              : "Upcoming"}
                           </span>
-                          <span className="text-sm text-muted-foreground font-medium">{event.date}</span>
+                          <span className="text-sm text-muted-foreground font-medium">
+                            {event.date}
+                          </span>
                         </div>
-                        <h3 className="font-serif text-2xl font-semibold mb-3">{event.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{event.description}</p>
+                        <h3 className="font-serif text-2xl font-semibold mb-3">
+                          {event.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {event.description}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -200,7 +236,10 @@ export default function TimelinePage() {
                 date: "October 2024",
               },
             ].map((update, index) => (
-              <div key={index} className="group overflow-hidden rounded-lg shadow-lg">
+              <div
+                key={index}
+                className="group overflow-hidden rounded-lg shadow-lg"
+              >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={update.image || "/placeholder.svg"}
@@ -209,8 +248,12 @@ export default function TimelinePage() {
                   />
                 </div>
                 <div className="bg-card p-6">
-                  <div className="text-sm text-muted-foreground mb-2">{update.date}</div>
-                  <h3 className="font-serif text-xl font-semibold">{update.title}</h3>
+                  <div className="text-sm text-muted-foreground mb-2">
+                    {update.date}
+                  </div>
+                  <h3 className="font-serif text-xl font-semibold">
+                    {update.title}
+                  </h3>
                 </div>
               </div>
             ))}
@@ -220,5 +263,5 @@ export default function TimelinePage() {
 
       <Footer />
     </div>
-  )
+  );
 }
